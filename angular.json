@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "WT-Pflicht-02-Angular": {
+    "angularSteam": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wt-pflicht-02-angular",
+            "outputPath": "dist/angular-steam",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "WT-Pflicht-02-Angular:build:production"
+              "browserTarget": "angularSteam:build:production"
             },
             "development": {
-              "browserTarget": "WT-Pflicht-02-Angular:build:development"
+              "browserTarget": "angularSteam:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WT-Pflicht-02-Angular:build"
+            "browserTarget": "angularSteam:build"
           }
         },
         "test": {
@@ -101,5 +101,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "angularSteam"
 }

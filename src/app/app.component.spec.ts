@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'WT-Pflicht-02-Angular'`, () => {
+  it(`should have as title 'angularSteam'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('WT-Pflicht-02-Angular');
+    expect(app.title).toEqual('angularSteam');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('WT-Pflicht-02-Angular app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('angularSteam app is running!');
   });
 });
