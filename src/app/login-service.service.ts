@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './user';
@@ -12,11 +12,13 @@ export class LoginServiceService {
 
   constructor(private http: HttpClient) { }
 
-  public loginUser(name: string, password: string) : Observable <User> {
+  public loginUser(name: string, password: string) : Observable<any>{
     let url = 'http://localhost:8080/steam/api/users/login';
     let body = new User(name, password);
     let headers = { 'Content-Type': 'application/json'};
-    return this.http.post<User>(url, body, {headers});
+    const header = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.post(url, body, {headers, responseType:'text'});
+  
   }
   
 }
